@@ -1,0 +1,22 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.card{
+    background-color: gold;
+    color: #000000;
+    border-radius: 2vh;
+    padding: 5.5vh;
+}
+
+[v-cloak]{
+    display: none;
+}
+
+.active{
+    background-color: #1a1a1a;
+    color: #fff;
+}
