@@ -30,11 +30,17 @@
             </div>
         </div>
 
-        <h3 class="fame">Hai fame?</h3>
+        <h3 :class="[clicked ? 'nonHoFame' : 'fame']">Hai fame?</h3>
+        <h1 v-show="visibile">CIAOOOOOOOOOOOO</h1>
 
         <button @click.prevent="isVisible = !isVisible">CHANGE</button>
         <button @click.prevent="nolan = director">SPLIT DIRECTOR</button>
-        <button>NON HO FAME</button>
+        <button @click.prevent="clicked = !clicked">NON HO FAME</button>
+        <button @click.prevent="visibile = !visibile">NASCONDI/MOSTRA</button>
+        
+        <h3 v-if="marando1">CIAO</h3>
+        <h3 v-else-if="marando2">HOLA</h3>
+        <h3 v-else>BUONGIORNO</h3>
 
     </div>
     
@@ -45,6 +51,10 @@
         Vue.createApp({
             data(){
                 return{
+                    marando1: true,
+                    marando2: false,
+                    visibile: false,
+                    clicked: false,
                     currentGame: 0,
                     nolan: 'Cristopher',
                     director: 'Nicholas Cage',
