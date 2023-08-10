@@ -20,3 +20,12 @@
     background-color: #1a1a1a;
     color: #fff;
 }
+
+.fame{
+    background-color: aqua;
+}
+
+.nonHoFame{
+    background-color: gold;
+    padding: 2vh;
+}

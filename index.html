@@ -21,8 +21,8 @@
             <div class="card" 
                  v-for="(videogame, index) in videogames" 
                  :key="index" 
-                 @mouseover="videogame.isHover = !videogame.isHover" 
-                 :class="{active: videogame.isHover == true}"
+                 @mouseover="currentGame = index" 
+                 :class="{active: currentGame == index}"
             >
                 <h3>{{ videogame.title }}</h3>
                 <h5>Console: {{ videogame.console }}</h5>
@@ -30,8 +30,11 @@
             </div>
         </div>
 
+        <h3 class="fame">Hai fame?</h3>
+
         <button @click.prevent="isVisible = !isVisible">CHANGE</button>
         <button @click.prevent="nolan = director">SPLIT DIRECTOR</button>
+        <button>NON HO FAME</button>
 
     </div>
     
@@ -42,15 +45,15 @@
         Vue.createApp({
             data(){
                 return{
-                    isVisible: true,
+                    currentGame: 0,
                     nolan: 'Cristopher',
                     director: 'Nicholas Cage',
                     films: ['Dark Knight', 'Oppenheimer', 'Memento'],
                     videogames: [
-                        {title: 'Starfield', console: 'Xbox Series X/S', year: 2023, isHover: false},
-                        {title: 'Doom Eternal Infinitum', console: 'Playstation 7', year: 2047, isHover: false},
-                        {title: 'The Elder Scrolls 6', console: 'Xbox Series W', year: 2066, isHover: false},
-                        {title: 'Half Life 3', console: 'Nintendo Box', year: 2099, isHover: false},
+                        {title: 'Starfield', console: 'Xbox Series X/S', year: 2023},
+                        {title: 'Doom Eternal Infinitum', console: 'Playstation 7', year: 2047},
+                        {title: 'The Elder Scrolls 6', console: 'Xbox Series W', year: 2066},
+                        {title: 'Half Life 3', console: 'Nintendo Box', year: 2099},
                     ]
                 }
             }
