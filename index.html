@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="app">{{ nolan }}</div>
     
 </body>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    nolan: 'Cristopher'
+                }
+            }
+        }).mount('#app')
+    </script>
 </html>
